@@ -6,7 +6,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="Project for Daniel John Idorot">
-    <link rel="stylesheet" href="chapter_6.css">
+    <link rel="stylesheet" href="/chapter_6_the_document_object_model/chapter_6.css">
     <!--<link rel="stylesheet" href="index.css"> -->
     <!--font-family: 'Roboto', sans-serif;
         font-family: 'Montserrat', sans-serif;-->
@@ -18,12 +18,32 @@
 <body>
     <main>
         <h1>The Document Object Model | Chapter 6</h1>
+        <p class='warning'>Something has gone <em>very</em> wrong!</p>
+        <header>
+            <h1 id='title'>Justice League</h1>
+            </header>
+            <ul id='roster'>
+            <li class='hero'>Superman</li>
+            <li class='vigilante hero' id='bats'>Batman</li>
+            <li class='hero'>Wonder Woman</li>
+            </ul>
+        
+        <section>
+            <h2>Document.forms</h2>
+            <form id="robby">
+                <input type="button" onclick="alert(document.forms[0].id);" value="robby's form" />
+              </form>
+              
+              <form id="dave">
+                <input type="button" onclick="alert(document.forms[1].id);" value="dave's form" />
+              </form>
+              
+              <form id="paul">
+                <input type="button" onclick="alert(document.forms[2].id);" value="paul's form" />
+              </form>
+        </section>
     </main>
-       
-
-
- 
-<script src="chapter_6.css"></script>
+<script src="/chapter_6_the_document_object_model/chapter_6.js"></script>
 </body>
 
 </html>
