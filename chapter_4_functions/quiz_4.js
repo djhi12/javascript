@@ -87,5 +87,11 @@ function start(quiz){
         alert(`Game Over, you scored ${score} point${score !== 1 ? 's' : ''}`);
     }
 }
+
+/*
+1. This invokes the start() function with the quiz variable passed to it as an argument. This 
+is required to actually start the quiz!
+*/
 start(quiz);
+
 
