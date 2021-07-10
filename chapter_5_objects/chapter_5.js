@@ -173,13 +173,96 @@ console.log(superman.city !== undefined); // false
 console.log(superman.name !== undefined); // true
 console.log(superman.name === undefined); // false
 console.log(superman.name === 'Superman'); // true
+console.log(superman.name === 'fly()'); // false
+console.log(superman.weight === 235); // true
 
 
 /*
-1. The in operator can be used to check whether an object has a particular property.
+1. As mentioned earlier, objects can inherit properties from other objects, so all objects 
+have a method called hasOwnProperty() . This can be used to check whether an object has a 
+property that is its own, rather than one that has been inherited from another object:
+*/
+console.log(superman.hasOwnProperty('city')); // false
+console.log(superman.hasOwnProperty('name')); // true
+console.log(superman.hasOwnProperty(235)); // false
+
+
+/*
+Finding all the Properties of an Object
+1. We can loop through all of an object’s properties and methods by using a for in loop.
 */
 
-// So, for example, we can check if the superman object has a property called city using this code:
+// For example, to log all the properties of the superman object to the console, we could use:
+for(const key in superman) {
+    console.log(key + ": " + superman[key]);
+}
+/*
+name: Superman
+chapter_5.js:195 real name: Clark Kent
+chapter_5.js:195 height: 75
+chapter_5.js:195 weight: 235
+chapter_5.js:195 hero: true
+chapter_5.js:195 villain: false
+chapter_5.js:195 allies: Batman,Supergirl,Superboy
+chapter_5.js:195 fly: fly() {
+        return 'Up, up and away!';
+    }
+*/
+
+/*
+Object.keys()
+1. The Object.keys() method will return an array of all the keys of any object that is provided 
+as an argument. We can then iterate over this array to access all the keys of an object:
+*/
+for(const key of Object.keys(superman)) {
+    console.log(key);
+}
+/*
+name
+chapter_5.js:217 real name
+chapter_5.js:217 height
+chapter_5.js:217 weight
+chapter_5.js:217 hero
+chapter_5.js:217 villain
+chapter_5.js:217 allies
+chapter_5.js:217 fly
+*/
 
 
+/*
+Object.values()
+1.ES2017 also adds some the Object.values() that works in the same way, but returns an array of 
+all the object's value:
+*/
+
+for(const value of Object.values(superman)) {
+    console.log(value);
+}
+/*
+["Batman", "Supergirl", "Superboy"]0: "Batman"1: "Supergirl"2: "Superboy"length: 3__proto__: Array(0)
+chapter_5.js:236 ƒ fly() {
+        return 'Up, up and away!';
+    }
+*/
+
+
+/*
+1. Object.entries() is also part of ES2017 and returns an array of key-value pairs. These 
+key-value pairs are returned in arrays, but they can be destructured and accessed individually 
+using the following notation:
+*/
+for(const [key,value] of Object.entries(superman)) {
+    console.log(`${key}: ${value}`);
+}
+/*
+name: Superman
+chapter_5.js:253 real name: Clark Kent
+chapter_5.js:253 height: 75
+chapter_5.js:253 weight: 235
+chapter_5.js:253 hero: true
+chapter_5.js:253 villain: false
+chapter_5.js:253 allies: Batman,Supergirl,Superboy
+chapter_5.js:253 fly: fly() {
+        return 'Up, up and away!';
+*/
 
