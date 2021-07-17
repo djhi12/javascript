@@ -7,3 +7,4 @@ var selectForm = document.forms[index];
 var selectFormElement = document.forms[index].elements[index];
 var formResult = selectForm + selectFormElement;
 console.log(formResult);
+

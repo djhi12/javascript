@@ -266,3 +266,232 @@ chapter_5.js:253 fly: fly() {
         return 'Up, up and away!';
 */
 
+
+/*
+Adding Properties
+1. New properties and methods can be added to objects at any time in a program. This is done by 
+simply assigning a value to the new property.
+*/
+const superman_3 = {
+    name: 'Superman',
+    'real name': 'Clark Kent',
+    height: 75,
+    weight: 235,
+    hero: true,
+    villain: false,
+    allies: ['Batman','Supergirl','Superboy'],
+    fly() {
+        return 'Up, up and away!';
+    }
+};
+
+console.log(superman_3);
+// For example, if we wanted to add a new city property to our superman object, we would do it like so:
+superman_3.city = 'Metropolis';
+console.log(superman_3.city); // Metropolis
+
+
+/*
+Changing Properties
+1. You can change the value of an object’s properties at any time using assignment. 
+*/
+
+// For example, we can change the value of the "real name" property like this:
+superman_3['real name'] = 'Kal-El';
+console.log(superman_3['real name']); // Kal-El
+
+
+/*
+Removing Properties
+1. Any property can be removed from an object using the delete operator.
+*/
+
+// For example, if we wanted to remove the fly method from the superman object, we would enter the following:
+delete superman_3.fly;
+console.log(superman_3.fly); // undefined
+console.log(superman_3);
+
+
+/*
+Nested Objects
+1. It’s even possible for an object to contain other objects. These are known as nested objects.
+*/
+// Here’s an example of an object that contains a list of other objects. It has been assigned to the variable jla :
+const jla = {
+    superman: { realName: 'Clark Kent' },
+    batman: { realName: 'Bruce Wayne' },
+    wonderWoman: { realName: 'Diana Prince' },
+    flash: { realName: 'Barry Allen' },
+    aquaman: { realName: 'Arthur Curry' },
+}
+
+console.log(jla);
+/*
+{superman: {…}, batman: {…}, wonderWoman: {…}, flash: {…}, aquaman: {…}}
+aquaman: {realName: "Arthur Curry"}
+batman: {realName: "Bruce Wayne"}
+flash: {realName: "Barry Allen"}
+superman: {realName: "Clark Kent"}
+wonderWoman: {realName: "Diana Prince"}
+*/
+
+console.log(jla.superman); // {realName: "Clark Kent"} realName: "Clark Kent"
+
+/*
+The values in nested objects can be accessed by referencing each property name in order using 
+either dot or bracket notation:
+*/ 
+console.log(jla.superman.realName); // Clark Kent
+
+// You can even mix the different notations:
+console.log(jla.aquaman['realName']); // Arthur Curry
+
+
+/*
+Objects are copied by reference
+1. 
+*/
+const thor = { name: 'Thor' 
+// more properties here
+};
+
+console.log(thor);
+/*
+{name: "Thor"}
+name: "Thor"
+*/
+
+const cloneThor = thor;
+console.log(cloneThor);
+/*
+{name: "Thor"}
+name: "Thor"
+*/
+
+// We can see this, if we make a change to the name property of cloneThor :
+cloneThor.name = 'Clor';
+console.log(cloneThor); // {name: "Clor"} name: "Clor"
+
+console.log(thor.name); // Clor
+
+let a = 1;
+let b = a;
+console.log(b); // 1
+
+b = 2;
+console.log(b); // 2
+console.log(a); // 1
+
+
+/*
+Objects as Parameters to Functions
+1. An object literal can be passed as a parameter to a function. This is useful when there are 
+a large number of parameters, as it allows the arguments to be provided by name and in any order. 
+This means you don't have to remember the order to enter them when invoking a function.
+*/
+function greet({greeting,name,age}) {
+    return `${greeting}! My name is ${name} and I am ${age} years old.`;
+}
+
+greet({ greeting: `What's up dude`, age: 10, name: `Bart` });
+console.log(greet({ greeting: `What's up dude`, age: 10, name: `Bart` })); // What's up dude! My name is Bart and I am 10 years old.
+document.getElementById('output').innerHTML = greet({ greeting: `What's up dude`, age: 10, name: `Bart` });
+
+
+
+function greet_1({greeting = 'Hello', name, age = 18}) {
+    return `${greeting}! My name is ${name} and I am ${age} years old.`;
+}
+
+console.log(greet_1({ name: 'Lisa', age: 8 })); // Hello! My name is Lisa and I am 8 years old.
+// document.getElementById('output_1').innerHTML = greet_1({ name: 'Lisa', age: 8 }); 
+
+
+/*
+this
+1. The keyword this refers to the object that it is within. It can be used inside methods 
+to gain access to the object’s properties.
+*/
+const dice = {
+    sides: 6,
+    roll() {
+        return Math.floor(this.sides * Math.random()) + 1;
+    }
+}
+console.log(dice.roll()); // 2 changeable
+console.log(dice.roll()); // 4 changeable
+// document.getElementById('output_2').innerHTML = dice.roll();
+
+// If we want to change the number of sides, all we need to do is modify the sides property:
+dice.sides = 20;
+console.log(dice.roll()); // 18 changeable
+console.log(dice.roll()); // 18 changeable
+
+
+/*
+Namespacing
+1. Naming collisions occur when the same variable or function name is used for different 
+purposes by code sharing the same scope.
+
+2. A solution to this problem is to use the object literal pattern to create a namespace 
+for groups of related functions. This is done by creating an object literal that serves 
+as the namespace, then adding any values as properties of that object, and any functions as methods.
+
+3. 
+*/
+const myMaths = {
+    square(x) {
+        return x * x;
+    },
+    mean(array,callback) {
+        if (callback) {
+        array.map( callback );
+        } 
+        const total = array.reduce((a, b) => a + b);
+        return total/array.length;
+    }
+};
+
+console.log(myMaths.square(3)); // 9
+console.log(myMaths.mean([1,2,3])); // 2
+
+
+/*
+Built-in Objects
+1. JavaScript has a number of other built-in global objects that can be accessed from 
+anywhere in a program. They provide a number of useful properties and methods that we’ll cover in this section.
+*/
+
+
+/*
+JSON
+1. 
+*/
+const batman = `{"name": "Batman",
+"real name": "Bruce Wayne", 
+"height": 74, 
+"weight": 210, 
+"hero": true, 
+"villain": false, 
+"allies": ["Robin",
+"Batgirl",
+"Superman"]}`;
+
+console.log(batman);
+console.log(JSON.parse());
+// document.getElementById('batmanJSON').innerHTML = batman;
+
+
+const batman_1 = '{"name": "Batman","real name": "Bruce Wayne","height": 74, "weight": 210, "hero": true, "villain": false, "allies": ["Robin","Batgirl","Superman"]}'
+/*
+parse()
+*/
+// The parse() method takes a string of data in JSON format and returns a JavaScript object:
+JSON.parse(batman_1);
+console.log(JSON.parse(batman_1));
+// document.getElementById('batmanParseJSON').innerHTML = JSON.parse(batman_1);
+
+/*
+
+*/
+
