@@ -478,7 +478,7 @@ const batman = `{"name": "Batman",
 "Superman"]}`;
 
 console.log(batman);
-console.log(JSON.parse());
+// console.log(JSON.parse(chapter_5.json)); // chapter_5 is not defined
 // document.getElementById('batmanJSON').innerHTML = batman;
 
 
@@ -494,4 +494,332 @@ console.log(JSON.parse(batman_1));
 /*
 
 */
+const wonderWoman = {
+    name: 'Wonder Woman',
+    'real name': 'Diana Prince',
+    height: 72,
+    weight: 165,
+    hero: true,
+    villain: false,
+    allies: ['Wonder Girl','Donna Troy','Superman'],
+    lasso: function(){
+        console.log('You will tell the truth!');
+    }
+}
+
+console.log(JSON.stringify(wonderWoman));
+// console.log(JSON.parse(wonderWoman)); // Unexpected token o in JSON at position 1 at JSON.parse (<anonymous>)
+console.log(JSON.stringify(wonderWoman, null, " "));
+
+
+/*
+The Math Object
+*/
+
+/*
+Mathematical Constants
+*/
+
+/*
+Math.abs()
+1. The Math.abs() method returns the absolute value of a number. So if the number is positive, 
+it will remain the same, and if it’s negative, it will become positive:
+*/
+
+console.log(Math.abs(3)); // 3
+console.log(Math.abs(-4.6)); // 4.6
+
+
+/*
+Rounding Methods
+1. The Math.ceil() method will round a number up to the next integer, or remain the same if it is already an integer:
+*/
+const roundingNumberUp = 10.80;
+console.log(Math.ceil(roundingNumberUp)); // 11
+
+console.log(Math.ceil(4.2)); // 5
+console.log(Math.ceil(8)); // 8
+console.log(Math.ceil(-4.2)); // -4
+
+
+/*
+Math.floor()
+1. The Math.floor() method will round a number down to the next integer, or remain the same if it is 
+already an integer:
+*/
+
+const roundingNumberDown = 10.85;
+console.log(Math.floor(roundingNumberDown)); // 10
+
+console.log(Math.floor(4.2)); // 4
+console.log(Math.floor(8)); // 8
+console.log(Math.floor(-4.2)); // -5
+
+
+/*
+Math.round()
+1. The Math.round() method will round a number to the nearest integer:
+*/
+console.log(Math.round(4.5)); // 5
+console.log(Math.round(4.499)); // 4
+console.log(Math.round(-4.2)); // -4
+
+
+/*
+Math.trunc()
+1. ES6 also introduced the Math.trunc() method that returns the integer-part of a number – 
+that is, it gets truncated at the decimal point:
+*/
+
+console.log(Math.trunc(4.9)); // 4
+console.log(Math.trunc(-4.2)); // -4
+
+
+/*
+Powers and Roots
+*/
+
+/*
+Math.exp()
+1. The Math.exp() method will raise a number to the power of Euler’s constant:
+*/
+console.log(Math.exp(1)); // 2.718281828459045
+console.log(Math.exp(0)); // 1
+console.log(Math.exp(-3)); // 0.049787068367863944
+console.log(Math.round(Math.exp(-3))); // 0
+
+
+/*
+Math.pow()
+1. The Math.pow() method will raise any number (the first argument) to the power of another number (the second argument):
+*/
+console.log(Math.pow(3, 2)); // 9
+console.log(Math.pow(4.5, 0)); // 1
+console.log(Math.pow(27, 1/3)); // 3
+console.log(Math.pow(3, 2, 3)); // 9
+console.log(Math.pow(3, 2 + 2)); // 81
+
+
+/*
+Math.sqrt()
+1. The Math.sqrt() method returns the positive square root of a number:
+*/
+console.log(Math.sqrt(121)); // 11
+console.log(Math.sqrt(2)); // 1.4142135623730951
+console.log(Math.sqrt(-1)); // Nan
+
+
+/*
+Math.cbrt()
+1. The Math.cbrt() method was introduced in ES6, which returns the cube root of numbers:
+*/
+console.log(Math.cbrt(8)); // 2
+console.log(Math.cbrt(-1000)); // -10
+
+
+
+/*
+Math.hypot()
+1. The Math.hypot() method was also introduced in ES6. It returns the square root of the sum of the 
+squares of all its arguments. 
+2. This can be used to calculate the hypotenuse of a right-angled triangle:
+*/
+console.log(Math.hypot(3, 4)); // 5
+console.log(Math.hypot(2, 3, 6)); // 7
+
+
+
+/*
+Logarithmic Methods
+*/
+
+/*
+Math.log()
+1. The Math.log() method returns the natural logarithm of a number:
+*/
+console.log(Math.log(Math.E)); // 1
+console.log(Math.log(1)); // 0
+console.log(Math.log(0)); // -Infinity
+console.log(Math.log(-2)); // Nan
+
+
+// Logarithms in base 2 and 10 were added in ES6:
+console.log(Math.log2(8)); // 3
+console.log(Math.log10(1000000)); // 6
+
+
+
+/*
+Maximum & Minimum Methods
+*/
+
+/*
+Math.max()
+1. The Math.max() method returns the maximum number from its arguments:
+*/
+console.log(Math.max(1, 2, 3)); // 3
+console.log(Math.max(Math.PI, Math.SQRT2, Math.E)); // 3.141592653589793
+
+
+/*
+Math.min()
+1. And the Math.min() method unsurprisingly returns the minimum number from the given arguments:
+*/
+console.log(Math.min(1, 2, 3)); // 1
+console.log(Math.min(Math.PI, Math.SQRT2, Math.E)); // 1.4142135623730951
+
+
+/*
+Trigonometric Functions
+1. The Math object also has the standard trigonometric functions, which are very useful when working 
+with geometrical objects. 
+2. All angles are measured in radians for these functions.
+*/
+
+/*
+Math.sin()
+1. The Math.sin() returns the sine of an angle:
+*/
+console.log(Math.sin(Math.PI / 6)); // 0.49999999999999994 // this calculation contains rounding errors, it should be 0.5
+const mathSine = Math.sin(Math.PI / 6);
+console.log(mathSine.toFixed()); // 0
+
+
+/*
+Math.cos()
+1. The Math.cos() returns the cosine of an angle:
+*/
+console.log(Math.cos(Math.PI / 6)); // 0.8660254037844387
+
+
+/*
+Math.tan()
+1. The Math.tan() returns the tangent of an angle:
+*/
+console.log(Math.tan(Math.PI / 4)); // 0.9999999999999999 // another rounding error, this should be 1
+console.log(Math.tan(Math.PI / 2)); // 16331239353195370 // this should be NaN or Infinity
+
+
+/*
+Math.asin()
+1. The Math.asin() returns the arcsine of a number. The result is an angle:
+*/
+console.log(Math.asin(1)); // 1.5707963267948966
+
+
+/*
+Math.acos()
+1. The Math.acos() returns the arccosine of a number. The result is an angle:
+*/
+console.log(Math.acos(0.5)); // 1.0471975511965979
+
+
+/*
+Math.atan()
+1. The Math.atan() returns the arctangent of a number. The result is an angle:
+*/
+console.log(Math.atan(Math.sqrt(3))); // 1.0471975511965976 // // Same as Math.PI/3
+
+
+/*
+Methods for the hyperbolic functions, sinh() , cosh() and tanh() were also added in ES6, as well as their inverses:
+*/
+console.log(Math.sinh(1)); // 1.1752011936438014
+console.log(Math.asinh(1.1752011936438014)); // 1
+console.log(Math.cosh(0)); // 1
+console.log(Math.acosh(1)); // 0
+console.log(Math.tanh(10)); // .9999999958776927
+console.log(Math.atanh(.9999999958776927)); // 9.999999995520374 // rounding error here
+
+
+
+/*
+Random Numbers
+*/
+
+/*
+Math.random()
+1. The Math.random() method is used to create random numbers, which can be very useful when writing programs.
+2. Calling the method will generate a number between 0 (inclusive) and 1 (exclusive), like so:
+*/
+console.log(Math.random()); // 0.9801687666418124
+
+function getRandomInt(max) {
+    return Math.floor(Math.random() * max);
+    document.getElementById("outPut").innerHTML = getRandomInt(3);
+  }
+  
+  console.log(getRandomInt(3));
+  // expected output: 0, 1 or 2
+
+  // document.getElementById("outPut").innerHTML = getRandomInt(3);
+
+console.log(6 * Math.random()); // 1.3936340576370463
+
+/*
+1. If we want to generate a random integer, we can use the Math.floor() method that we saw earlier 
+to remove the decimal part of the return value.
+*/
+console.log(Math.floor(6 * Math.random())); // 2 (Random numbers)
+
+
+/*
+The Date Object
+1. Date objects contain information about dates and times. Each object represents a single moment in time.
+*/
+
+/*
+Constructor Function
+1. A constructor function is used to create a new date object using the new operator:
+*/
+const today = new Date();
+console.log(today.toString()); // Fri Jul 23 2021 20:03:39 GMT+0800 (Philippine Standard Time)
+document.getElementById("today").innerHTML = today.toString();
+
+/*
+1. If an argument is not supplied, the date will default to the current date and time. 
+It’s possible to create Date objects for any date by supplying it as an argument to the constructor function. 
+This can be written as a string in a variety of forms:
+*/
+
+const christmas = new Date('2017 12 25');
+console.log(christmas.toString()); // Mon Dec 25 2017 00:00:00 GMT+0800 (Philippine Standard Time)
+document.getElementById("christmas").innerHTML = christmas.toString();
+
+const chanukah = new Date('12 December 2017');
+console.log(chanukah.toString()); // Tue Dec 12 2017 00:00:00 GMT+0800 (Philippine Standard Time)
+document.getElementById("chanukah").innerHTML = chanukah.toString();
+
+const eid = new Date('Sunday, June 25, 2017');
+console.log(eid.toString()); // Sun Jun 25 2017 00:00:00 GMT+0800 (Philippine Standard Time)
+document.getElementById("eid").innerHTML = eid.toString();
+
+/*
+1. As you can see, the string passed to the Date constructor can be in a variety of formats. 
+However, in order to be more consistent, it’s better to provide each bit of information about 
+the date as a separate argument. The parameters that can be provided are as follows:
+*/
+
+ // new Date(year, month, day, hour, minutes, seconds, milliseconds);
+
+ const solstice = new Date(2017, 5, 21); // Summer Solstice
+ console.log(solstice.toString()); // Wed Jun 21 2017 00:00:00 GMT+0800 (Philippine Standard Time)
+ document.getElementById("solstice").innerHTML = solstice.toString();
+
+ /*
+ 1. Remember that computer programs start counting at zero, so January is 0, February is 1, 
+ and so on up to December, which is 11.
+ */
+
+/*
+An alternative is to use a timestamp, which is a single integer argument that represents the number 
+of milliseconds since the Epoch (1st January 1970):
+*/
+const diwali = new Date(1508367600000);
+console.log(diwali.toString()); // Thu Oct 19 2017 07:00:00 GMT+0800 (Philippine Standard Time)
+console.log(diwali.toString(65413213416546546546)); // Thu Oct 19 2017 07:00:00 GMT+0800 (Philippine Standard Time)
+
+
+
+
 
