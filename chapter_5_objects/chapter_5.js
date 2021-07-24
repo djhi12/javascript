@@ -821,5 +821,96 @@ console.log(diwali.toString(65413213416546546546)); // Thu Oct 19 2017 07:00:00 
 
 
 
+/* UTC */
+
+/*
+getDay() & getUTCDay()
+1. The getDay() and getUTCDay() methods are used to find the day of the week that the date object falls on. 
+It returns a number, starting at 0 for Sunday, up to 6 for Saturday:
+*/
+const days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+
+const newDate = new Date();
+console.log(newDate); // Sat Jul 24 2021 19:38:13 GMT+0800 (Philippine Standard Time)
+console.log(days[newDate.getDay()]); // Saturday 
+document.getElementById("daysDate").innerHTML = days[newDate.getDay()] ;
+
+const day = newDate.getDay(days[0]);
+console.log(day); // 6
+
+const daysNames = day + ' ' + days;
+console.log(daysNames); // 6 Sunday,Monday,Tuesday,Wednesday,Thursday,Friday,Saturday
+
+
+/**********************/
+// Stockoveflow
+Date.prototype.addDays = function(days) {
+    var date = new Date(this.valueOf());
+    date.setDate(date.getDate() + days);
+    return date;
+}
+
+var date = new Date();
+
+console.log(date.addDays(5)); // Thu Jul 29 2021 19:45:01 GMT+0800 (Philippine Standard Time)
+
+
+
+var days_1 = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+var d = new Date(days_1);
+var dayName = days_1[d.getDay()];
+console.log(dayName); // undefined
+
+
+
+// Github
+var dayNames = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+
+/*Sample Code*/
+var d = new Date();
+console.log(dayNames[d.getDay()]); // Saturday
+
+/**********************/
+
+/*
+getDate() and getUTCDate()
+1. The getDate() and getUTCDate() methods return the day of the month for the date object 
+(note that these values start counting from 1, not 0, so they return the actual day of the month):
+*/
+const newDate_1 = new Date();
+console.log(newDate_1); // Sat Jul 24 2021 20:44:05 GMT+0800 (Philippine Standard Time)
+
+const date_1 = newDate_1.getDate(); 
+console.log(date_1); // 24
+
+
+/*
+getMonth() and getUTCMonth()
+1. The getMonth() and getUTCMonth() methods can be used to find the month of the date object.
+2. It returns an integer, but remember to count from 0; so January is 0, February is 1, 
+and so on up to December being 11:
+*/
+const monthsName = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 
+                    'October', 'November', 'December']
+
+const month = new Date();
+console.log(month); // Sat Jul 24 2021 21:24:50 GMT+0800 (Philippine Standard Time)
+
+const months = month.getMonth(); // 
+console.log(months); // 6
+
+console.log(monthsName[months]); // July
+
+console.log(monthsName[months] + ' ' + date_1 + ', ' + days[newDate.getDay()]); // July 24, Saturday
+
+
+
+
+
+
+
+
+
+
 
 
