@@ -904,6 +904,53 @@ console.log(monthsName[months]); // July
 console.log(monthsName[months] + ' ' + date_1 + ', ' + days[newDate.getDay()]); // July 24, Saturday
 
 
+/*
+getFullYear() and getUTCFullYear()
+1. The getFullYear() and getUTCFullYear() methods return the year of the date object.
+2. There is also a getYear() method, but it isn’t Y2K compliant, so shouldn’t be used:
+*/
+
+const year = new Date();
+const years = year.getFullYear();
+console.log(years); // 2021
+
+console.log(monthsName[months] + ' ' + date_1 + ', ' + years + ' ' + days[newDate.getDay()]); // July 26, 2021 Monday
+document.getElementById("date").innerHTML = 
+monthsName[months] + ' ' + date_1 + ', ' + years + ' ' + days[newDate.getDay()];
+
+
+/*
+getTime()
+1. The getTime() method returns a timestamp representing the number of milliseconds since the Epoch:
+*/
+const time = new Date();
+console.log(time.getTime()); // 1627302180244 counting
+
+
+/*
+This can be useful for incrementing dates by a set amount of time. For example, a day can be represented by 
+1000 * 60 * 60 * 24 milliseconds:
+*/
+const christmasEve = new Date(christmas.getTime() - 1000 * 60 * 60 * 24);
+console.log(christmasEve.toString()); // Sun Dec 24 2017 00:00:00 GMT+0800 (Philippine Standard Time)
+
+
+/*
+getTimezoneOffset()
+1. The getTimezoneOffset() method returns the difference, in minutes, between the local time 
+on the computer and UTC. For example, my timezone is currently the same as UTC, so it returns 0:
+*/
+const timeZone = new Date();
+console.log(timeZone.getTimezoneOffset()); // -480
+
+
+/*
+Setter Methods
+*/
+
+
+
+
 
 
 
