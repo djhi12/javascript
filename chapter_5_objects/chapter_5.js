@@ -944,9 +944,119 @@ const timeZone = new Date();
 console.log(timeZone.getTimezoneOffset()); // -480
 
 
+
 /*
 Setter Methods
+1. These are methods that can be used to change the value of the date held in a Date object.
+2. Each of the methods takes an argument representing the value to which you update the date. 
+3. The methods return the timestamp of the updated date object.
 */
+console.log(diwali.setDate(7)); // 1507330800000
+console.log(diwali.setDate()); // NaN
+console.log(diwali.toString()); // Invalid Date
+// console.log(diwali.toString().setDate()); // Uncaught TypeError: diwali.toString(...).setDate is not a function
+
+
+/*
+Creating Regular Expressions
+*/
+
+/*
+Literal notation
+*/
+const pattern = /[a-zA-Z] + ing$/;
+console.log(pattern); // /[a-zA-Z] + ing$/
+
+/*
+1. Alternatively, you can create a new instance of the RegExp object using the new operator 
+and a constructor function:
+*/
+const pattern_1 = new RegExp('[a-aZ-Z] + ing');
+console.log(pattern_1); // /[a-aZ-Z] + ing/
+
+
+/*
+1. Using literal regular expressions takes less typing, but there are advantages to using the 
+constructor function as it lets you create regular expressions using strings, which can be useful 
+when the regular expression is provided from user input; in a form, for example.
+2. Constructors also have the advantage of letting you create a regular expression using a variable:
+*/
+const language = 'JavaScript';
+const pattern_2 = new RegExp(language);
+console.log(pattern_2); // /JavaScript/
+
+console.log(pattern.test('joke')); // false
+console.log(pattern.test('joking')); // false
+console. log(pattern.test('jokingly')); // false
+
+const pattern_3 = 'joke';
+const pattern_4 = new RegExp(pattern_3); //
+console.log(pattern_4); // /joke/
+console.log(pattern_4.test('joke')); // true
+
+
+const patter_5 = /JavaScript/;
+const pattern_6 = new RegExp(patter_5);
+console.log(pattern_6); // /JavaScript/
+
+const patter_7 = /JavaScript/;
+const pattern_8 = new RegExp();
+// console.log(pattern_7.pattern_8); // Uncaught ReferenceError: pattern_7 is not defined
+
+
+/*
+Character Groups
+1. Groups of characters can be placed together inside square brackets. This character group 
+represents any one of the characters inside the brackets.
+*/
+
+const vowels = /[aeiou]/;
+const vowels_1 = new RegExp(vowels);
+console.log(vowels_1); // /[aeiou]/
+
+// A sequence of characters can also be represented by placing a dash [ - ] between the first and last characters;
+const alphabet = /[A-Z]/;
+const alphabet_1 = new RegExp(alphabet);
+console.log(alphabet_1); // /[A-Z]/
+
+// The digits 0-9 can be represented as:
+const numbers = /[0-9]/;
+const numbers_1 = new RegExp(numbers); //
+console.log(numbers_1); // /[0-9]/
+
+/*
+1. If a \^ character is placed at the start of the sequence of characters with the brackets, 
+it negates the sequence, so the following regular expression represents any character that is not a capital letter:
+*/
+const lowerCase = /[^A-Z]/;
+const lowerCase_1 = new RegExp(lowerCase);
+console.log(lowerCase_1); // /[^A-Z]/
+
+
+
+/*
+1. These groups can be combined with letters to make a more complex pattern.
+2.  For example, the following regular expression represents the letter J (lowercase or capital) 
+followed by a vowel, followed by a lowercase v, followed by a vowel:
+*/
+const patter_11 = new RegExp();
+const pattern_12 = /[Jj][aeiou]v[aeiou]/;
+const pattern_13 = new RegExp(pattern_12);
+console.log(pattern_13); // /[Jj][aeiou]v[aeiou]/
+console.log(pattern_13.test('jive')); // true
+console.log(pattern_13.test('JavaScript')); // true
+console.log(pattern_13.test('Jollibee')); // false
+console.log(pattern_13.test('jake')); // false
+
+
+
+/*
+Regular Expression Properties
+*/
+
+
+
+
 
 
 
