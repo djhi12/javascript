@@ -1053,6 +1053,74 @@ console.log(pattern_13.test('jake')); // false
 /*
 Regular Expression Properties
 */
+const pattern_14 = /java/i;
+const pattern_15 = pattern_14.test('java');
+console.log(pattern_15); // true
+
+
+/*
+Special Characters
+*/
+const pattern_16 = /^J[aeiou]+\w+ing$/;
+console.log(pattern_16); // /^J[aeiou]+[w+ing$]/
+console.log(pattern_16.test('Joking')); // true
+console.log(pattern_16.test('Joking')); // true
+console.log(pattern_16.test('Jooking')); // true
+
+
+/*
+Greedy and Lazy Modifiers
+*/
+
+/*
+1. The greedy pattern /a.+a/ will return the whole string because it is the longest string that 
+matches the pattern of 'a', followed by numerous characters and finishing with an 'a':
+*/
+const word = 'abracadabra';
+const greedyPattern = /a.+a/;
+console.log(greedyPattern.exec(word)); 
+/*
+["abracadabra", index: 0, input: "abracadabra", groups: undefined]
+0: "abracadabra"
+groups: undefined
+index: 0
+input: "abracadabra"
+length: 1
+*/
+
+/*
+1. The lazy pattern /a.+?a/ changes the + modifier to +? . This will only return the string 'abra' 
+as this is the shortest string that matches the pattern 'a' followed by some characters and ending in an 'a'.
+*/
+const lazyPattern = /a.+?a/;
+console.log(lazyPattern.exec(word));
+/*
+["abra", index: 0, input: "abracadabra", groups: undefined]
+0: "abra"
+groups: undefined
+index: 0
+input: "abracadabra"
+length: 1
+*/
+
+
+/*
+A Practical Example
+1. If we were looking for PDF files and had a list of filenames, this regular expression could be 
+used to find them (assuming they have a .pdf extension, of course):
+*/
+const pdf = /.*\.pdf$/;
+console.log(pdf.test('chapter5.pdf')); // true
+console.log(pdf.test('report.doc')); // false
+
+
+/*
+String Methods
+*/
+
+
+
+
 
 
 
