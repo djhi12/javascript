@@ -1116,10 +1116,56 @@ console.log(pdf.test('report.doc')); // false
 
 /*
 String Methods
+1. The split() method we saw in Chapter 2 can also accept a regular expression that’s used to split 
+a string into the separate elements of an array.
 */
 
+/*
+1. The following example uses a regular expression to split a string every time there are one or 
+more occurrences of a whitespace character:
+*/
+console.log('Hello World'.split(/\s+/)); // ["Hello", "World"]
 
 
+/*
+match()
+1. The match() method returns an array of all the matches. By default, only the first is returned:
+*/
+console.log('JavaScript'.match(/[aeiou]/)); // ["a", index: 1, input: "JavaScript", groups: undefined]
+
+// We can use the g flag to return all the matches:
+console.log('JavaScript'.match(/[aeiou]/g)); // (3) ["a", "a", "i"]
+
+
+/*
+search()
+1. The search() method returns the position of the first match:
+*/
+
+console.log('I\'m learning JavaScript'); // I'm learning JavaScript
+console.log('I\'m learning JavaScript'.search(/ruby/i)); // -1
+console.log('I\'m learning JavaScript'.search(/Java/i)); // 13
+
+
+/*
+replace()
+1. The replace() method replaces any matches with another string. The following example will 
+replace all vowels with a '*' character:
+*/
+console.log('JavaScript'.replace(/[aeiou]/ig, '*')); // J*v*Scr*pt
+
+
+
+/*
+Matched Groups
+1. 
+*/
+const link = "<a href='https://www.sitepoint.com' title='Oh Yeah!'>Awesome Web Resources</a>"
+console.log(link); // <a href='https://www.sitepoint.com' title='Oh Yeah!'>Awesome Web Resources</a>
+document.getElementById("link").innerHTML = link;
+
+const mdlink = link.replace(/<a href='(.*?')'.*?>(.*?)<\/a>/g, "[$2][$1]"); // 
+console.log(mdlink); // <a href='https://www.sitepoint.com' title='Oh Yeah!'>Awesome Web Resources</a>
 
 
 
