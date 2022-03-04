@@ -4,14 +4,15 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Chapter 8 | Forms</title>
+    <title>Chapter 8 | Forms | Heroes</title>
 </head>
 <body>
     <main>
-        <form name='search' action='/search'>
-            <input name='searchInput' placeholder="Search Here">
-            <button type='submit'>Search</button>
-            <button type="reset">Reset</button>
+        <form id="hero">
+            <label for="heroName">
+                <input type="text" id="heroName" name="heroName" autofocus placeholder="Your Super Hero Name" maxlength="32">
+            </label>
+            <button type="submit">Submit</button>
         </form>
     </main>
     <script src="/chapter_8_forms/main.js"></script>
