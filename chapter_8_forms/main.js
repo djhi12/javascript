@@ -53,7 +53,24 @@ function makeHero(){
 
     hero.name = form3.heroName.value; // create a name property based on the input field's value
 
+    hero.realName = form3.realName.value;
+
+
+
     alert(JSON.stringify(hero)); // convert object to JSON string and display in alert dialog
 
+    hero.powers = [];
+    // for (let i=0; 1 < form3.powers.length; i++ ){
+    //     if (form3.powers[i].checked) {
+    //         hero.powers.push(form3.powers[i].value);
+    //     }
+    // }
+
+    hero.powers = [...form3.powers].filter(box => checked).map(box => box.value);
+
+    console.log(powers);
+
     return hero;
+
+    console.log(form3.powers);
 }
