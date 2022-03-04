@@ -42,6 +42,7 @@ function search(event) {
 document.forms.hero.heroName.focus();
 
 
+// -------
 const form3 = document.forms['hero'];
 form3.addEventListener('submit', makeHero, false);
 
@@ -50,7 +51,7 @@ function makeHero(){
 
     const hero = {}; // create an empty object
 
-    hero.name = form.heroName.value; // create a name property based on the input field's value
+    hero.name = form3.heroName.value; // create a name property based on the input field's value
 
     alert(JSON.stringify(hero)); // convert object to JSON string and display in alert dialog
 
