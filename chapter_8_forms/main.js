@@ -46,31 +46,61 @@ document.forms.hero.heroName.focus();
 const form3 = document.forms['hero'];
 form3.addEventListener('submit', makeHero, false);
 
-function makeHero(){
+function makeHero() {
     event.preventDefault(); // prevent the form from being submitted
 
     const hero = {}; // create an empty object
 
     hero.name = form3.heroName.value; // create a name property based on the input field's value
+    console.log(hero.name);
 
     hero.realName = form3.realName.value;
+    console.log(hero.realName);
 
+    hero.category = form3.category.value;
+    // form3.type[1].checked;
+    console.log(hero.category);
 
+    hero.age = form3.age.value;
+    console.log(hero.age);
+
+    form3.city;
+    console.log(form3.city);
+
+    hero.city = form3.city.value;
+    console.log(hero.city);
+
+    hero.origin = form3.origin.value;
+    console.log(hero.origin);
 
     alert(JSON.stringify(hero)); // convert object to JSON string and display in alert dialog
 
-    hero.powers = [];
+    // hero.powers = [];
     // for (let i=0; 1 < form3.powers.length; i++ ){
     //     if (form3.powers[i].checked) {
     //         hero.powers.push(form3.powers[i].value);
     //     }
+    //     console.log(form3);
     // }
 
-    hero.powers = [...form3.powers].filter(box => checked).map(box => box.value);
+    // hero.powers = [...form3.powers].filter(box => checked).map(box => box.value);
 
-    console.log(powers);
+    // console.log(powers);
 
-    return hero;
+    // return hero;
 
-    console.log(form3.powers);
+    // console.log(form3.powers);
+
+
+    // const form = document.getElementsByTagName(form);
+    // console.log(form.category);
+    form3.addEventListener('submit', validate, false);
+
+    function validate(event) {
+        const firstLetter = form3.heroName.value[0];
+        if (firstLetter.toUpperCase() === 'X') {
+            event.preventDefault();
+            alert('Your name is not allowed to start with X!');
+        }
+    }
 }
