@@ -104,3 +104,5 @@ function makeHero() {
         }
     }
 }
+
+console.log('Daniel');
