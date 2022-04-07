@@ -33,47 +33,47 @@
 //     event.preventDefault();
 // }
 
-function search(event) {
-    alert(`You searched for: ${input.value}`);
-    event.preventDefault();
-    input.value = 'Search Here';
-}
+// function search(event) {
+//     alert(`You searched for: ${input.value}`);
+//     event.preventDefault();
+//     input.value = 'Search Here';
+// }
 
-document.forms.hero.heroName.focus();
+// document.forms.hero.heroName.focus();
 
 
-// -------
-const form3 = document.forms['hero'];
-form3.addEventListener('submit', makeHero, false);
+// // -------
+// const form3 = document.forms['hero'];
+// form3.addEventListener('submit', makeHero, false);
 
-function makeHero() {
-    event.preventDefault(); // prevent the form from being submitted
+// function makeHero() {
+//     event.preventDefault(); // prevent the form from being submitted
 
-    const hero = {}; // create an empty object
+//     const hero = {}; // create an empty object
 
-    hero.name = form3.heroName.value; // create a name property based on the input field's value
-    console.log(hero.name);
+//     hero.name = form3.heroName.value; // create a name property based on the input field's value
+//     console.log(hero.name);
 
-    hero.realName = form3.realName.value;
-    console.log(hero.realName);
+//     hero.realName = form3.realName.value;
+//     console.log(hero.realName);
 
-    hero.category = form3.category.value;
-    // form3.type[1].checked;
-    console.log(hero.category);
+//     hero.category = form3.category.value;
+//     // form3.type[1].checked;
+//     console.log(hero.category);
 
-    hero.age = form3.age.value;
-    console.log(hero.age);
+//     hero.age = form3.age.value;
+//     console.log(hero.age);
 
-    form3.city;
-    console.log(form3.city);
+//     form3.city;
+//     console.log(form3.city);
 
-    hero.city = form3.city.value;
-    console.log(hero.city);
+//     hero.city = form3.city.value;
+//     console.log(hero.city);
 
-    hero.origin = form3.origin.value;
-    console.log(hero.origin);
+//     hero.origin = form3.origin.value;
+//     console.log(hero.origin);
 
-    alert(JSON.stringify(hero)); // convert object to JSON string and display in alert dialog
+//     alert(JSON.stringify(hero)); // convert object to JSON string and display in alert dialog
 
     // hero.powers = [];
     // for (let i=0; 1 < form3.powers.length; i++ ){
@@ -94,15 +94,32 @@ function makeHero() {
 
     // const form = document.getElementsByTagName(form);
     // console.log(form.category);
-    form3.addEventListener('submit', validate, false);
+//     form3.addEventListener('submit', validate, false);
 
-    function validate(event) {
-        const firstLetter = form3.heroName.value[0];
-        if (firstLetter.toUpperCase() === 'X') {
-            event.preventDefault();
-            alert('Your name is not allowed to start with X!');
-        }
+//     function validate(event) {
+//         const firstLetter = form3.heroName.value[0];
+//         if (firstLetter.toUpperCase() === 'X') {
+//             event.preventDefault();
+//             alert('Your name is not allowed to start with X!');
+//         }
+//     }
+// }
+
+const label = form.querySelector('label');
+const error = document.createElement('div');
+error.classList.add('error');
+error.textContent = '! Your name is not allowed to start with X.';
+label.append(error);
+
+function validateInline() {
+    const heroName = this.value.toUpperCase();
+    if(heroName.startsWith('X')) {
+        error.style.display = 'block';
+    } else {
+        error.style.display = 'none';
     }
+
+    console.log(error);
 }
 
 console.log('Daniel');
