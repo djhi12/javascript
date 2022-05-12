@@ -105,7 +105,7 @@
 //     }
 // }
 
-const label = form.querySelector('label');
+const label = document.querySelector('label');
 const error = document.createElement('div');
 error.classList.add('error');
 error.textContent = '! Your name is not allowed to start with X.';
@@ -119,7 +119,7 @@ function validateInline() {
         error.style.display = 'none';
     }
 
-    console.log(error);
+    console.log(error); 
 }
 
 console.log('Daniel');
