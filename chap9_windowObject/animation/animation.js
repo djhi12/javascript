@@ -1,3 +1,4 @@
+
 const squareA = document.getElementById('A');
 const squareB = document.getElementById('B');
 
@@ -8,7 +9,7 @@ setInterval(() => {
     squareA.style.transform = `rotate(${angleA}deg)`
 }, 1000 / 60);
 
-let angleB = 0;
+    let angleB = 0;
 
 function rotateB() {
     angleB = (angleB + 2) % 360
@@ -17,3 +18,4 @@ function rotateB() {
 }
 
 const id = requestAnimationFrame(rotateB);
+
