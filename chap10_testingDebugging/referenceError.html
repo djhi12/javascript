@@ -11,7 +11,7 @@
 <body>
     <script>
         try {
-            throw new ReferenceError('Hello', 'someFile.js', 10)
+            throw new ReferenceError('Hello', '/chap2_programming_basics/quiz2.js', 10)
         } catch (e) {
             console.log(e instanceof ReferenceError) // true
             console.log(e.message) // "Hello"
