@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Callback Function</title>
+</head>
+
+<body>
+    <script>
+        // function wait(message, selfDestruct, seconds) {
+        //     setTimeout(selfDestruct, seconds * 1000);
+        //     console.log(message);
+        // }
+
+        // function selfDestruct() {
+        //     console.log('BOOOOM!');
+        // }
+
+        // console.log(wait('This tape will self-destruct in five seconds...', selfDestruct, 5));
+        // console.log('Hmmmm, should I accept this mission or not?');
+
+        // function calculation(addition, subtraction, multiply) {
+        //     const total = addition() + subtraction() + multiply();
+        //     // return total;
+        //     console.log(total);
+        // }
+
+        // function addition() {
+        //     const add = 3;
+        //     const add1 = 6;
+        //     const total1 = add + add1;
+        //     console.log(total1);
+        // }
+
+        // function subtraction() {
+        //     const sub = 3;
+        //     const sub1 = 6;
+        //     const total2 = sub + sub1;
+        //     console.log(total2);
+        // }
+
+        // function multiply() {
+        //     const mul = 3;
+        //     const mul1 = 6;
+        //     const total3 = mul + mul1;
+        //     console.log(total3);
+        // }
+
+
+        // console.log(calculation(addition, subtraction, multiply));
+
+        function sayName(name, cb) {
+            console.log(`Hello  ${name}`);
+            cb(name);
+        }
+
+        function sayHowAreYou(n) {
+            console.log('How are you? ' + n);
+        }
+        sayName('DelftStack', sayHowAreYou);
+    </script>
+</body>
+
+</html>
