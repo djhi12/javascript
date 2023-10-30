@@ -13,10 +13,10 @@ const pi = 3.1415;
 // Constants
 const pi2 = 3.1415;
 
-let age = 30;
+let age2 = 30;
 const name2 = "John";
 
-if (age > 18) {
+if (age2 > 18) {
     let canVote = true;
     console.log(name2 + " can vote.");
 } else {
