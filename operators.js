@@ -1,45 +1,43 @@
 
-// Arithmetic Operators
-let a = 5;
-let b = 2;
+// Example Program
+// Define two variables
+let num1 = 10;
+let num2 = 5;
 
-console.log(a + b); // 7
-console.log(a - b); // 3
-console.log(a * b); // 10
-console.log(a / b); // 2.5
-console.log(a % b); // 1
-console.log(a ** b); // 25
+// Arithmetic operations
+let sum = num1 + num2;
+let difference = num1 - num2;
+let product = num1 * num2;
+let quotient = num1 / num2;
+let remainder = num1 % num2;
 
+// Output the results
+console.log("Arithmetic Operations:");
+console.log(`Sum: ${sum}`);
+console.log(`Difference: ${difference}`);
+console.log(`Product: ${product}`);
+console.log(`Quotient: ${quotient}`);
+console.log(`Remainder: ${remainder}`);
 
-// Comparison Operators
-let x = 5;
-let y = '5';
+// Assignment operations
+let x = 20;
+x += 5; // Equivalent to x = x + 5;
 
-console.log(x == y);  // true (loose equality)
-console.log(x === y); // false (strict equality)
-console.log(x != y);  // false (loose inequality)
-console.log(x !== y); // true (strict inequality)
-console.log(x > 3);    // true
-console.log(x <= 4);   // true
+// Comparison operations
+let isEqual = num1 === num2;
+let isGreaterThan = num1 > num2;
+let isNotEqual = num1 !== num2;
 
+// Output the results
+console.log("Assignment and Comparison Operations:");
+console.log(`Updated x: ${x}`);
+console.log(`Is num1 equal to num2: ${isEqual}`);
+console.log(`Is num1 greater than num2: ${isGreaterThan}`);
+console.log(`Is num1 not equal to num2: ${isNotEqual}`);
 
-// Logical Operators
-let isSunny = true;
-let isWarm = true;
-
-console.log(isSunny && isWarm); // true
-console.log(isSunny || isWarm); // true
-console.log(!isSunny);           // false
-
-
-// Assignment Operators
-let total = 10;
-total += 5; // total is now 15
-
-
-// Other Operators
-let age = 20;
-let canVote = age >= 18 ? "Yes" : "No";
-console.log(canVote); // "Yes"
-
-console.log(typeof age); // "number"
+// Conditional operation
+if (num1 > num2) {
+    console.log("num1 is greater than num2.");
+} else {
+    console.log("num1 is not greater than num2.");
+}
