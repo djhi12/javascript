@@ -24,6 +24,7 @@ console.log(`Substring: ${sub}`); // Output: 'Substring: quick'
 // Searching and Replacing
 const indexOfWord = sentence.indexOf(searchWord);
 console.log(`Index of '${searchWord}': ${indexOfWord}`); // Output: 'Index of 'quick': 4'
+
 const replacedSentence = sentence.replace(searchWord, 'fast');
 console.log(`Replaced sentence: ${replacedSentence}`); // Output: 'Replaced sentence: The fast brown fox jumps over the lazy dog'
 
