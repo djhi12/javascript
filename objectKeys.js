@@ -1,6 +1,6 @@
 
 // Here's the basic syntax for using Object.keys():
-Object.keys(object)
+// Object.keys(object)
 
 
 // Here's an example of how to use Object.keys():
