@@ -7,6 +7,8 @@ function functionName(parameter1, parameter2, /* ... */) {
 
 
 // 
+let argument1 = "";
+let argument2 = "";
 functionName(argument1, argument2, /* ... */);
 
 
@@ -45,4 +47,5 @@ let rectangleLength = 5;
 let rectangleWidth = 8;
 
 let area = calculateRectangleArea(rectangleLength, rectangleWidth);
+
 displayArea(rectangleLength, rectangleWidth, area);
