@@ -34,7 +34,9 @@ function main() {
 
     // Function Calls
     const rectangleArea = calculateRectangleArea(rectangleWidth, rectangleHeight);
+
     const rectanglePerimeter = calculateRectanglePerimeter(rectangleWidth, rectangleHeight);
+
     const circleArea = calculateCircleArea(circleRadius);
 
     // Output Results
