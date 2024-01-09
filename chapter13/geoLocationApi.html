@@ -13,6 +13,49 @@
         <p id="locationInfo">Waiting for location...</p>
 
         <script>
+            // Check for Geolocation Support:
+            if ("geolocation" in navigator) {
+                // Geolocation is supported
+            } else {
+                // Geolocation is not supported
+                console.log("Geolocation is not supported by your browser");
+            }
+
+
+            // Get Current Position:
+            navigator.geolocation.getCurrentPosition(
+                function (position) {
+                    // Success callback
+                    const latitude = position.coords.latitude;
+                    const longitude = position.coords.longitude;
+                    console.log(`Latitude: ${latitude}, Longitude: ${longitude}`);
+                },
+                function (error) {
+                    // Error callback
+                    console.error(`Error getting location: ${error.message}`);
+                }
+            );
+
+
+            // Watch Position:
+            const watchId = navigator.geolocation.watchPosition(
+                function (position) {
+                    // Success callback
+                    const latitude = position.coords.latitude;
+                    const longitude = position.coords.longitude;
+                    console.log(`Latitude: ${latitude}, Longitude: ${longitude}`);
+                },
+                function (error) {
+                    // Error callback
+                    console.error(`Error getting location: ${error.message}`);
+                }
+            );
+
+            // To stop watching the position later:
+            // navigator.geolocation.clearWatch(watchId);
+
+
+            // Program in HTML
             if ("geolocation" in navigator) {
                 // Geolocation is supported
                 navigator.geolocation.getCurrentPosition(
