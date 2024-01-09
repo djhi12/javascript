@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>GeoLocation API</title>
+    </head>
+
+    <body>
+        <h1>Geolocation Example</h1>
+
+        <p id="locationInfo">Waiting for location...</p>
+
+        <script>
+            if ("geolocation" in navigator) {
+                // Geolocation is supported
+                navigator.geolocation.getCurrentPosition(
+                    function (position) {
+                        // Success callback
+                        const latitude = position.coords.latitude;
+                        const longitude = position.coords.longitude;
+
+                        // Display location information on the webpage
+                        const locationInfoElement = document.getElementById('locationInfo');
+                        locationInfoElement.textContent = `Latitude: ${latitude}, Longitude: ${longitude}`;
+                    },
+                    function (error) {
+                        // Error callback
+                        console.error(`Error getting location: ${error.message}`);
+                    }
+                );
+            } else {
+                // Geolocation is not supported
+                console.log("Geolocation is not supported by your browser");
+            }
+        </script>
+    </body>
+
+</html>
