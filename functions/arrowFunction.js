@@ -37,6 +37,7 @@ function ArrowFunction() {
 }
 
 const traditionalInstance = new TraditionalFunction();
+
 const arrowInstance = new ArrowFunction();
 
 
@@ -54,7 +55,11 @@ const length = 5;
 const width = 3;
 
 const areaTraditional = calculateAreaTraditional(length, width);
+
 const areaArrow = calculateAreaArrow(length, width);
 
 console.log(`Traditional Function: The area of the rectangle is ${areaTraditional}`);
+
 console.log(`Arrow Function: The area of the rectangle is ${areaArrow}`);
+
+
