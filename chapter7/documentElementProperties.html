@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>JavaScript DOM Example</title>
+        <style>
+            .highlight {
+                background-color: yellow;
+            }
+        </style>
+    </head>
+
+    <body>
+
+        <h1 id="mainTitle">Hello, DOM!</h1>
+
+        <p class="paragraph">This is a paragraph with class 'paragraph'.</p>
+
+        <ul>
+            <li>Item 1</li>
+            <li>Item 2</li>
+            <li>Item 3</li>
+        </ul>
+        <label for="properties">Document Element Properties</label><br>
+        <input name="properties" id="properties" type="text" id="inputField" value="Initial Value">
+
+        <script>
+            // getElementById(id)
+            var myElement = document.getElementById('myId');
+
+            // getElementsByClassName(className)
+            var elements = document.getElementsByClassName('myClass');
+
+            // getElementsByTagName(tagName)
+            var paragraphs = document.getElementsByTagName('p');
+
+            // querySelector(selector)
+            var element = document.querySelector('.myClass');
+
+            // querySelectorAll(selector)
+            var elements = document.querySelectorAll('p.myClass');
+
+            // innerHTML
+            var content = document.getElementById('myElement').innerHTML;
+            document.getElementById('myElement').innerHTML = 'New content';
+
+            // innerText
+            var textContent = document.getElementById('myElement').innerText;
+            document.getElementById('myElement').innerText = 'New text content';
+
+            // value
+            var inputValue = document.getElementById('myInput').value;
+            document.getElementById('myInput').value = 'New value';
+
+            // style
+            document.getElementById('myElement').style.color = 'red';
+
+            // classList
+            document.getElementById('myElement').classList.add('newClass');
+            document.getElementById('myElement').classList.remove('oldClass');
+
+
+            // Example program using document element properties
+
+            // 1. getElementById
+            // Retrieves an element by its id attribute.
+            var titleElement = document.getElementById('mainTitle');
+            titleElement.innerText = 'New Title';
+
+            // 2. getElementsByClassName
+            // Retrieves a collection of elements with the specified class name.
+            var paragraphs = document.getElementsByClassName('paragraph');
+            for (var i = 0; i < paragraphs.length; i++) {
+                paragraphs[i].style.color = 'blue';
+            }
+
+            // 3. getElementsByTagName
+            // Retrieves a collection of elements with the specified tag name.
+            var listItems = document.getElementsByTagName('li');
+            for (var i = 0; i < listItems.length; i++) {
+                listItems[i].innerHTML = 'List Item ' + (i + 1);
+            }
+
+            // 4. querySelector
+            // Returns the first element that matches the specified CSS selector.
+            var inputField = document.querySelector('#inputField');
+            inputField.value = 'New Input Value';
+
+            // 5. innerHTML
+            // Gets or sets the HTML content of an element.
+            var ulElement = document.querySelector('ul');
+            ulElement.innerHTML += '<li>New Item</li>';
+
+            // 6. style
+            // Gets or sets the inline style of an element.
+            titleElement.style.fontSize = '24px';
+
+            // 7. classList
+            // Provides methods to manipulate the class names of an element.
+            titleElement.classList.add('highlight');
+
+            // Adding an event listener
+            titleElement.addEventListener('click', function () {
+                alert('Title Clicked!');
+            });
+        </script>
+
+    </body>
+
+</html>
