@@ -10,4 +10,4 @@ console.log("Name:", name);
 console.log("Age:", age);
 console.log("Address:", address);
 console.log("Favorite Food:", favoriteFood);
-console.log("Favorite Books:", favoriteBooks);
+console.log("Favorite Book:", favoriteBook);
